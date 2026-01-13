@@ -1,0 +1,44 @@
+html{
+    width:100%
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.row{
+    gap: 1.5vw;
+}
+
+.staticTitle{
+    width:45%;
+    height:45%;
+    transition: transform 0.5s ease;
+}
+
+.staticTitle:hover{
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+.selectUI{
+
+}
+
+.enter{
+    margin: 3vw;
+    padding: 5vw;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.5s ease;
+    color: white;   
+}
+
+.enter p {
+    font-size: 2vw;
+}
