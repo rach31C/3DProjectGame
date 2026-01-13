@@ -1,5 +1,11 @@
-html{
-    width:100%
+@font-face {
+  font-family: GOS; /* set name */
+  src: url(GOS/Game\ Of\ Squids.otf);
+  src: url(GOS/Game\ Of\ Squids.ttf); /* url of the font */
+}
+
+*{
+    cursor: default;
 }
 
 body{
@@ -41,47 +47,68 @@ body{
     backdrop-filter: blur(5.5px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.5s ease;
-    color: white;   
+    color: white;
 }
 
 .enter h3{
+    font-family: GOS;
     margin-bottom: 5%;
-    font-size: 2vw;
+    font-size: 2.75vw;
 }
 
 .enter p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    text-align: center;
     margin-bottom: 5%;
-    font-size: 1.5vw;
+    font-size: 1.75vw;
 }
 
 .enter a{
+    font-family: GOS;
     text-decoration: none;
     color: white;
     font-size:1.75vw;
 }
 
 .enterPlayer{
-    background: rgba(63, 164, 175, 0.35);
+    background: rgba(197, 249, 255, 0.1);
+    padding: 5vw;
     transition: background-color 0.25s ease-in-out;
+    transition: padding 0.5s ease-in-out;
 }
 
 .enterPlayer:hover{
-    cursor: pointer;
-    background: rgba(115, 241, 255, 0.35);
+    background: rgba(114, 213, 224, 0.25);
     transition: background-color 0.25s ease-in-out;
 }
 
 .playerButton{
-    font-size: 1.5vw;
-    transition: font-size 0.25s ease-in-out;
+    cursor: pointer;
+    background-color: #3f9ab1;
+    border-radius: 15px;
+    padding: 0.5vw 2vw 0.5vw 2vw;
+    transition: background-color 0.25s ease-in-out;
 }
 
 .playerButton:hover{
-    transition: font-size 0.25s ease-in-out;
-    font-size: 2vw;
+    transition: color 0.25s ease-in-out;
+    background-color: rgb(116, 202, 224);
 }
 
+
+.enterGuard{
+    background: rgba(255, 216, 226, 0.1);
+    transition: background-color 0.25s ease-in-out;
+}
+
+.enterGuard:hover{
+    background: rgba(255, 145, 173, 0.25);
+    transition: background-color 0.25s ease-in-out;
+}
+
+
 .guardButton{
+    cursor: pointer;
     background-color: #fc668b;
     border-radius: 15px;
     padding: 0.5vw 2vw 0.5vw 2vw;
@@ -90,5 +117,5 @@ body{
 
 .guardButton:hover{
     transition: color 0.25s ease-in-out;
-    background-color: #fd86a4;
+    background-color: rgb(252, 150, 175);
 }
