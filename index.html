@@ -7,23 +7,23 @@
   </head>
   <body style="margin: 0; background: linear-gradient(rgba(0, 0, 0, 0.548), rgba(0, 0, 0, 0.548)), url('titleBG.gif') no-repeat center center fixed; background-size: cover;">
 //new change
-    <div class="container-fluid">
+    <div class="container-fluid" style="width:95%;">
       <div class="row my-5 d-flex justify-content-center">
         <img style="width: 40%; height:40%;" class="staticTitle" src="SGStaticTitle.png">
       </div>
       <div class="row d-flex justify-content-center flex-wrap">
-        <div class="col enter">
+        <button onclick="window.location.href='main.html'" class="col enter enterPlayer">
           <div class= "d-flex align-items-center flex-column">
-            <h3>Player</h3>
+            <h3>PLAYER</h3>
             <p>Welcome...Join at your own risk to achieve your dreams...</p>
-            <a href="main.html">Enter</a>
+            <a href="main.html" class="playerButton">Enter</a>
           </div>
-        </div>
+        </button>
         <div class="col enter">
           <div class= "d-flex align-items-center flex-column">
-            <h3>Pink Guard</h3>
-            <p>Be ready to serve and kill...</p>
-            <a href="main.html">Enter</a>
+            <h3>PINK GUARD</h3>
+            <p>Get ready to serve and kill...</p>
+            <a href="main.html" class="guardButton">Enter</a>
           </div>
         </div>
       </div>
