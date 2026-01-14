@@ -21,6 +21,92 @@ body{
     color: black;
 }
 
+.button-credits{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    font-family: GOS;
+    font-size: 2vw;
+    background: rgba(0,0,0,0);
+    color: white;
+    border: none;
+    padding: 0.75vw 1vw;
+}
+
+.button-credits:hover{
+    text-decoration: underline solid white;
+}
+
+.button-credits::selection{
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+
+.overlay-credits{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.box-credits{
+    background: rgba(0,0,0,0.1);
+    color: white;
+}
+
+.box-credits h2{
+    font-family: GOS;
+    font-size: 3vw;
+}
+
+.box-credits ul {
+    list-style: none;
+    font-size: 2.5vw;
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+    line-height: 5vw;
+}
+
+.text-credits{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    margin: 25vh;
+}
+
+.close-credits{
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-family: GOS;
+    font-size: 2vw;
+    background: rgba(0,0,0,0);
+    color: white;
+    border: none;
+    padding: 0.75vw 1vw;
+}
+
+.close-credits:hover{
+    text-decoration: underline solid white;
+}
+
+.close-credits::selection{
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
 .staticTitle{
     width:45%;
     height:45%;
@@ -31,10 +117,6 @@ body{
     cursor: pointer;
     transition: transform 0.5s ease;
     transform: scale(1.05);
-}
-
-.selectUI{
-
 }
 
 .enter{
@@ -57,7 +139,6 @@ body{
 }
 
 .enter p {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     text-align: center;
     margin-bottom: 5%;
     font-size: 1.75vw;
@@ -72,7 +153,6 @@ body{
 
 .enterPlayer{
     background: rgba(197, 249, 255, 0.1);
-    padding: 5vw;
     transition: background-color 0.25s ease-in-out;
     transition: padding 0.5s ease-in-out;
 }
