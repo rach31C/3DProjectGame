@@ -4,6 +4,10 @@
   src: url(GOS/Game\ Of\ Squids.ttf); /* url of the font */
 }
 
+html{
+    overflow-y: hidden;
+}
+
 *{
     cursor: default;
 }
@@ -156,7 +160,7 @@ body{
 
 .enter{
     margin: 1vw;
-    padding: 5vw;
+    padding: 4vw 5vw;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.16);
     border-radius: 16px;
@@ -165,6 +169,7 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.5s ease;
     color: white;
+    
 }
 
 .enter h3{
