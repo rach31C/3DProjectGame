@@ -7,11 +7,15 @@
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="lobby" src="lobby/scene.gltf"></a-asset-item>
+        <!-- <a-asset-item id="lobby" src="lobby/scene.gltf"></a-asset-item> -->
+        <a-asset-item id="doll" src="doll/scene.gltf"></a-asset-item>
+        <a-asset-item id="Game1" src="RedGreenLight/scene.gltf"></a-asset-item>
       </a-assets>
       
       <a-entity>
-         <a-gltf-model  src="#lobby" scale="1 1 1"></a-gltf-model>
+         <!-- <a-gltf-model  src="#lobby" scale="1 1 1"></a-gltf-model> -->
+         <a-gltf-model  src="#doll" position="0 0 22" rotation="0 180 0" scale="2.8 2.8 2.8" animation-mixer></a-gltf-model>
+         <a-gltf-model  src="#Game1" scale="1 1 1"></a-gltf-model>
       </a-entity>
 
        <a-camera position="-6 3 15"></a-camera>
