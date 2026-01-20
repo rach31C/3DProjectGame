@@ -2,7 +2,9 @@ AFRAME.registerComponent("game-manager", {
   init: function () {
     this.games = [
       { id: "#lobby", position: "0 0 0", scale: "1 1 1" },
-      { id: "#game1", position: "0 0 0", scale: "1 1 1" }  
+      { id: "#game1", position: "0 0 0", scale: "1 1 1" },
+      { id: "#tug",   position: "0 0 0", scale: "1 1 1" },
+      { id: "#glass", position: "0 0 0", scale: "1 1 1" }  
     ];
 
     this.currentGameIndex = 0;
