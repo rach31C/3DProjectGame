@@ -2,26 +2,25 @@
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
-    
+    <script src="script.js"></script>
   </head>
+
   <body>
     <a-scene>
-      <a-assets>
-        <!-- <a-asset-item id="lobby" src="lobby/scene.gltf"></a-asset-item> -->
-        <a-asset-item id="doll" src="doll/scene.gltf"></a-asset-item>
-        <a-asset-item id="Game1" src="RedGreenLight/scene.gltf"></a-asset-item>
-      </a-assets>
-      
-      <a-entity>
-         <!-- <a-gltf-model  src="#lobby" scale="1 1 1"></a-gltf-model> -->
-         <a-gltf-model  src="#doll" position="0 0 22" rotation="0 180 0" scale="2.8 2.8 2.8" animation-mixer></a-gltf-model>
-         <a-gltf-model  src="#Game1" scale="1 1 1"></a-gltf-model>
-      </a-entity>
 
-       <a-camera position="-6 3 15"></a-camera>
-    
-      
-       
+      <a-assets>
+        <a-asset-item id="lobby" src="lobby/scene.gltf"></a-asset-item>
+        <a-asset-item id="game1" src="RedGreenLight/scene.gltf"></a-asset-item>
+        <a-asset-item id="game2" src="Honeycomb/scene.gltf"></a-asset-item>
+        <a-asset-item id="game3" src="TugOfWar/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity id="game-container"></a-entity>
+
+      <!-- THIS LINE STARTS EVERYTHING -->
+      <a-entity game-manager></a-entity>
+
+      <a-camera position="-6 3 15"></a-camera>
 
     </a-scene>
   </body>
