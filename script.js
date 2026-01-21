@@ -1,5 +1,21 @@
-AFRAME.registerComponent("game-manager", {
-  init: function () {
+let rnd = (l,u) => Math.random() * (u-l) + l
+let scene, time_text, time_left = 50;
+
+window.addEventListener("DOMContentLoaded",function() {
+  time_text = document.getElementById("time");
+}
+
+function updateTimer(){
+  time_text.setAttribute("value", "Time: " + time_left);
+  time_left--;
+
+  if (time_left >= 0) {
+    setTimeout(updateTimer, 1000);
+  
+  }
+}
+
+function () {
     this.games = [
       { id: "#lobby", position: "0 0 0", scale: "1 1 1" },
       { id: "#game1", position: "0 0 0", scale: "1 1 1" },
@@ -44,5 +60,8 @@ AFRAME.registerComponent("game-manager", {
       this.nextGame();
     }, this.gameDuration);
   }
+
+    window.requestAnimationFrame(loop);
+}
 });
 
