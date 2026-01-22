@@ -17,10 +17,14 @@
 
       <a-entity id="game-container"></a-entity>
 
+      <!-- THIS LINE STARTS EVERYTHING -->
       <a-entity game-manager></a-entity>
 
-       <a-camera>
-        <a-text id="time" value="Time: " color="black" position="0 0 -3"></a-text>
+       
+
+       <a-camera position="-6 3 15">
+        <a-text id="time" position="-2 1 -1" value="Time: " color="black" init="updateTimer()"></a-text>
+        <a-text id="time" position="-2 1 -1" value="Time: 50" color="black"></a-text>
       </a-camera>
 
     </a-scene>

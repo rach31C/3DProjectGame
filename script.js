@@ -1,67 +1,69 @@
-let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, time_text, time_left = 50;
+let rnd = (l, u) => Math.random() * (u - l) + l;
 
-window.addEventListener("DOMContentLoaded",function() {
+let scene;
+let time_text;
+let time_left = 30;
+
+let games = [
+  { id: "#lobby", position: "0 0 0", scale: "1 1 1" },
+  { id: "#game1", position: "0 0 0", scale: "1 1 1" },
+  { id: "#tug", position: "0 0 0", scale: "1 1 1" },
+  { id: "#glass", position: "0 0 0", scale: "1 1 1" }
+];
+
+let currentGameIndex = 0;
+let gameDuration = 30 * 1000; // 30 seconds
+let container;
+
+window.addEventListener("DOMContentLoaded", function () {
+
+  scene = document.querySelector("a-scene");
+  container = document.querySelector("#game-container");
   time_text = document.getElementById("time");
-}
 
-function updateTimer(){
+  loadGame();
+  updateTimer();
+  startCycle();
+});
+
+
+// ---------------- TIMER ----------------
+function updateTimer() {
   time_text.setAttribute("value", "Time: " + time_left);
   time_left--;
 
   if (time_left >= 0) {
     setTimeout(updateTimer, 1000);
-  
   }
 }
 
-function () {
-    this.games = [
-      { id: "#lobby", position: "0 0 0", scale: "1 1 1" },
-      { id: "#game1", position: "0 0 0", scale: "1 1 1" },
-      { id: "#tug",   position: "0 0 0", scale: "1 1 1" },
-      { id: "#glass", position: "0 0 0", scale: "1 1 1" }  
-    ];
 
-    this.currentGameIndex = 0;
-    this.gameDuration = 1 * 30 * 1000; // 30s
+// ---------------- GAME LOADING ----------------
+function loadGame() {
 
-    this.container = document.querySelector("#game-container");
+  container.innerHTML = "";
 
-    this.loadGame();
-    this.startCycle();
-  },
+  let gameData = games[currentGameIndex];
 
-  loadGame: function () {
-    // Clear previous game
-    this.container.innerHTML = "";
+  let gameEntity = document.createElement("a-gltf-model");
+  gameEntity.setAttribute("src", gameData.id);
+  gameEntity.setAttribute("position", gameData.position);
+  gameEntity.setAttribute("scale", gameData.scale);
 
-    const gameData = this.games[this.currentGameIndex];
+  container.appendChild(gameEntity);
 
-    const gameEntity = document.createElement("a-gltf-model");
-    gameEntity.setAttribute("src", gameData.id);
-    gameEntity.setAttribute("position", gameData.position);
-    gameEntity.setAttribute("scale", gameData.scale);
-
-    this.container.appendChild(gameEntity);
-
-    console.log("Loaded game:", gameData.id);
-  },
-
-  nextGame: function () {
-    this.currentGameIndex =
-      (this.currentGameIndex + 1) % this.games.length;
-
-    this.loadGame();
-  },
-
-  startCycle: function () {
-    setInterval(() => {
-      this.nextGame();
-    }, this.gameDuration);
-  }
-
-    window.requestAnimationFrame(loop);
+  console.log("Loaded game:", gameData.id);
 }
-});
 
+
+// ---------------- GAME CYCLING ----------------
+function nextGame() {
+  currentGameIndex = (currentGameIndex + 1) % games.length;
+  loadGame();
+}
+
+function startCycle() {
+  setInterval(function () {
+    nextGame();
+  }, gameDuration);
+}
