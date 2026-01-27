@@ -19,8 +19,19 @@
 
       <a-entity game-manager></a-entity>
 
+    <!-- PLAYER 1 (YOU) -->
+<a-entity position="0 1.6 0">
+<a-cylinder id="player1" position="" player1-controls></a-cylinder>
+</a-entity>
+
+<!-- PLAYER 2 (NPC / Friend) -->
+ <a-entity position="1 0.5 -3">
+ <a-cylinder id="player2" color="blue" player1-controls></a-cylinder>
+ </a-entity>
+
+
        <a-camera>
-        <a-text id="time" value="Time: " color="black" position="0 0 -3"></a-text>
+        <a-text id="time" value="Time: " color="black" position="4 2 -3"></a-text>
       </a-camera>
 
     </a-scene>
