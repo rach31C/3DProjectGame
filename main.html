@@ -20,14 +20,18 @@
       <a-entity game-manager></a-entity>
 
     <!-- PLAYER 1 (YOU) -->
-<a-entity position="0 1.6 0">
-<a-cylinder id="player1" position="" player1-controls></a-cylinder>
-</a-entity>
+    <a-entity id="player1" radius="0.5" position="0 0 0" scale="0.4 0.4 0.4" player-controls>
+      <a-cylinder position="0 0 0" height= "3" src="player456.jpg" repeat="2 1"></a-cylinder>
+      <a-sphere position="0 2.5 0" src="sigma.jpg" repeat="2 1" rotation="0 90 0"></a-sphere>
+    </a-entity>
+     
 
 <!-- PLAYER 2 (NPC / Friend) -->
- <a-entity position="1 0.5 -3">
- <a-cylinder id="player2" color="blue" player1-controls></a-cylinder>
- </a-entity>
+ <a-entity id="player2" radius="0.5" position="0 0 0" scale="0.4 0.4 0.4" player-controls>
+      <a-cylinder position="0 0 0" height= "3"></a-cylinder>
+      <a-sphere position="0 2.5 0"></a-sphere>
+    </a-entity>
+     
 
 
        <a-camera>
