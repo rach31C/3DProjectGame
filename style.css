@@ -64,9 +64,8 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
     font-family: GOS;
-    font-size: 2vw;
+    font-size: 2.75vw;
     background: rgba(0,0,0,0);
     color: white;
     border: none;
@@ -130,7 +129,7 @@ body{
     left: 0;
     cursor: pointer;
     font-family: GOS;
-    font-size: 2vw;
+    font-size: 2.75vw;
     background: rgba(0,0,0,0);
     color: white;
     border: none;
@@ -146,10 +145,99 @@ body{
     color: white;
 }
 
+/* CREDITS END */
+
+.button-tutorial{
+    position: fixed;
+    top: 6.15vh;
+    left: 0.25vw;
+    font-family: GOS;
+    font-size: 2.75vw;
+    background: rgba(0,0,0,0);
+    color: white;
+    border: none;
+    padding: 0.75vw 1vw;
+}
+
+.button-tutorial:hover{
+    text-decoration: underline solid white;
+}
+
+.button-tutorial::selection{
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+.overlay-tutorial{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.box-tutorial{
+    background: rgba(0,0,0,0.1);
+    color: white;
+}
+
+.box-tutorial h2{
+    font-family: GOS;
+    font-size: 3vw;
+}
+
+.box-tutorial ul {
+    list-style: none;
+    font-size: 2.5vw;
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+    line-height: 5vw;
+}
+
+.text-tutorial{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    margin: 25vh;
+}
+
+.close-tutorial{
+    position: fixed;
+    top: 6.15vh;
+    left: 0.25vw;
+    cursor: pointer;
+    font-family: GOS;
+    font-size: 2.75vw;
+    background: rgba(0,0,0,0);
+    color: white;
+    border: none;
+    padding: 0.75vw 1vw;
+}
+
+.close-tutorial:hover{
+    text-decoration: underline solid white;
+}
+
+.close-tutorial::selection{
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+/* TUTORIAL END */
+
 .staticTitle{
     width:45%;
     height:45%;
     transition: transform 0.5s ease;
+    animation: blinker 0.15s linear infinite;
 }
 
 .staticTitle:hover{
@@ -172,29 +260,37 @@ body{
     
 }
 
+@keyframes blinker {
+  35% {
+    opacity: 50%;
+  }
+}
+
 .enter h3{
     font-family: GOS;
-    margin-bottom: 5%;
-    font-size: 2.75vw;
+    margin-bottom: 2%;
+    font-size: 4.5vw;
 }
 
 .enter p {
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     font-size: 1.75vw;
+    animation: blinker 0.1s linear infinite;
 }
 
 .enter a{
     font-family: GOS;
     text-decoration: none;
     color: white;
-    font-size:1.75vw;
+    font-size:3vw;
 }
 
 .enterPlayer{
     background: rgba(197, 249, 255, 0.1);
     transition: background-color 0.25s ease-in-out;
     transition: padding 0.5s ease-in-out;
+    animation: blinker 0.05s linear infinite;
 }
 
 .enterPlayer:hover{
