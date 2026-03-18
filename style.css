@@ -237,7 +237,7 @@ body{
     width:45%;
     height:45%;
     transition: transform 0.5s ease;
-    animation: blinker 0.15s linear infinite;
+    animation: blinker 0.2s linear infinite;
 }
 
 .staticTitle:hover{
@@ -276,7 +276,7 @@ body{
     text-align: center;
     margin-bottom: 1%;
     font-size: 1.75vw;
-    animation: blinker 0.1s linear infinite;
+    animation: blinker 0.15s linear infinite;
 }
 
 .enter a{
@@ -290,7 +290,6 @@ body{
     background: rgba(197, 249, 255, 0.1);
     transition: background-color 0.25s ease-in-out;
     transition: padding 0.5s ease-in-out;
-    animation: blinker 0.05s linear infinite;
 }
 
 .enterPlayer:hover{

@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+    <script src="game1.js"></script>
+
+    <style>
+      @font-face {
+        font-family: 'digital'; /* set name */
+        src: url('digital.ttf'); /* url of the font */
+      }
+
+      #timeDisplay {
+        font-family: digital;
+        color: red;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <a-scene>
+
+      <a-assets>
+          <img id="ground" src="RedLightGreen/Ground_baseColor.png">
+          <img id="wall" src="RedLightGreen/Walls_baseColor.jpeg">
+          <img id="ceiling" src="RedLightGreen/Metal_baseColor.jpeg">
+          <img id="houseWall" src="RedLightGreen/House_baseColor.jpeg">
+          <img id="door" src="RedLightGreen/Door_baseColor.png">
+          <img id="roofTile" src="RedLightGreen/Roof_baseColor.png">
+
+          <a-asset-item id="dollSG" src="dollSG/scene.gltf" ></a-asset-item>
+      </a-assets>
+
+      <a-entity id="walls">
+        <a-box position="0 17 -150" width="100" height="45" depth="1" src="#wall"></a-box>
+        <a-box position="-50 17 0" rotation="0 90 0" width="300" height="45" depth="1" src="#wall" repeat="3 1"></a-box>
+        <a-box position="50 17 0" rotation="0 -90 0" width="300" height="45" depth="1" src="#wall" repeat="3 1"></a-box>
+        <a-box position="0 17 150" width="100" height="45" depth="1" src="#wall"></a-box>
+      </a-entity>
+
+      <a-entity id="houseS" position="0 0 50">
+        <a-entity id="house2" position="30 0 0">
+          <a-box position="0 1 100" width="13" height="10" depth="5" src="#houseWall" repeat="2 2"></a-box>
+          <a-box position="0 2 97.9" width="4.5" height="4.5" src="#door"></a-box>
+          <a-box position="-4.5 2.25 97.9" width="2" height="2" color="#16482d"> </a-box>
+          <a-cylinder position="-4.5 3.25 97.9" rotation="90 0 0"radius="1" height="1" color="#16482d"></a-cylinder>
+
+          <a-entity id="chimney">
+            <a-box position="0 7 98" width="3" height="4" depth="3" src="#houseWall"></a-box>
+            <a-box position="0 9 98" width="3.5" height="0.5" depth="3.5" src="#houseWall"></a-box>
+          </a-entity> 
+
+          <a-entity id="roof">
+            <a-box position="0 7.25 98.5" rotation="50 180 0" width="14" height="0.25" depth="7" src="#roofTile" repeat="1 1" ></a-box>
+            <a-cylinder position="-6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+            <a-cylinder position="6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+          </a-entity>
+        </a-entity>
+        <a-entity id="house1">
+          <a-box position="0 1 100" width="13" height="10" depth="5" src="#houseWall" repeat="2 2"></a-box>
+          <a-box position="0 2 97.9" width="4.5" height="4.5" src="#door"></a-box>
+          <a-box position="-4.5 2.25 97.9" width="2" height="2" color="#16482d"> </a-box>
+          <a-cylinder position="-4.5 3.25 97.9" rotation="90 0 0"radius="1" height="1" color="#16482d"></a-cylinder>
+
+          <a-entity id="chimney">
+            <a-box position="0 7 98" width="3" height="4" depth="3" src="#houseWall"></a-box>
+            <a-box position="0 9 98" width="3.5" height="0.5" depth="3.5" src="#houseWall"></a-box>
+          </a-entity> 
+
+          <a-entity id="roof">
+            <a-box position="0 7.25 98.5" rotation="50 180 0" width="14" height="0.25" depth="7" src="#roofTile" repeat="1 1" ></a-box>
+            <a-cylinder position="-6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+            <a-cylinder position="6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+          </a-entity>
+        </a-entity>
+        <a-entity id="house3" position="-30 0 0">
+          <a-box position="0 1 100" width="13" height="10" depth="5" src="#houseWall" repeat="2 2"></a-box>
+          <a-box position="0 2 97.9" width="4.5" height="4.5" src="#door"></a-box>
+          <a-box position="-4.5 2.25 97.9" width="2" height="2" color="#16482d"> </a-box>
+          <a-cylinder position="-4.5 3.25 97.9" rotation="90 0 0"radius="1" height="1" color="#16482d"></a-cylinder>
+
+          <a-entity id="chimney">
+            <a-box position="0 7 98" width="3" height="4" depth="3" src="#houseWall"></a-box>
+            <a-box position="0 9 98" width="3.5" height="0.5" depth="3.5" src="#houseWall"></a-box>
+          </a-entity> 
+
+          <a-entity id="roof">
+            <a-box position="0 7.25 98.5" rotation="50 180 0" width="14" height="0.25" depth="7" src="#roofTile" repeat="1 1" ></a-box>
+            <a-cylinder position="-6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+            <a-cylinder position="6.75 7 100.5" rotation="280 0 90" radius="3.5" height="0.25" src="#roofTile" segments-radial="3"></a-cylinder>
+          </a-entity>
+        </a-entity>                 
+      </a-entity>
+
+      <a-entity position="-10 25 -148">
+        <a-text id="timeDisplay" scale="30 30 30" side="double"></a-text>
+        <div id="timeDisplay"></div>
+      </a-entity>
+      
+      <!-- DOLL -->
+      <a-entity position="0 0 -133" rotation="0 180 0">
+        <a-gltf-model id="doll" src="#dollSG" scale="5 5 5"></a-gltf-model>
+      </a-entity>
+
+      <a-box id="finishLine" position="0 -0.8 -125" color="red" width="100" height="2" depth="1.5" ></a-box>
+      <a-plane width="200" height="300" rotation="-90 0 0" src="#ground" repeat="15 20"></a-plane>
+      <a-box width="200" depth="300" position=" 0 40 0" rotation="180 0 0" src="#ceiling" repeat="15 20"></a-box>
+      <a-sky color="black"></a-sky>
+      
+      <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 1000">
+        <a-cursor>
+          <a-text id="valueDisplay" position="0 -0.5 -1"></a-text>
+        </a-cursor>
+     </a-camera>
+
+    </a-scene>
+  </body>
+</html>
