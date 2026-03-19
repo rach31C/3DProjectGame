@@ -1,19 +1,24 @@
 //SOUND
+let bgAudio = new Audio('audio/game1.mp3');
 let greenLight = new Audio('audio/dollAudio.mp3');
 let dollActive = false;
 
 window.addEventListener("DOMContentLoaded",function() {
-    let progress = localStorage.getItem('points') || 0;
-    let finish = document.getElementById("finishLine");
-    let winStatus = true;
+    // let progress = localStorage.getItem('points') || 0;
+
     let player = document.getElementById("player");
     let doll = document.getElementById("doll");
+    let finish = document.getElementById("finishLine");
     let valueDisplay = document.getElementById("valueDisplay");
 
     let timeDisplay = this.document.getElementById("timeDisplay");
     let timeMin = 1;
     let timeSec = 31;
     let gameOver = false;
+
+    bgAudio.volume = 0.5;
+    bgAudio.loop = true;
+    bgAudio.play();
 
     //CLOCK
     setInterval(()=>{
@@ -37,23 +42,18 @@ window.addEventListener("DOMContentLoaded",function() {
 
     setInterval(()=>{
         if(player.object3D.position.z <= finish.object3D.position.z){
-            progress ++;
             valueDisplay.setAttribute('value', `YOU WIN!`);
-            localStorage.setItem('points', progress);
-            
          } else {
             if(gameOver){
                 timeDisplay.setAttribute('value', `TIME'S UP!`);
                 valueDisplay.setAttribute('value', `YOU LOSE!`);
-                winStatus = false;
                 window.location.href = 'scene2.html'
             } else {
                 valueDisplay.setAttribute('value', `KEEP WALKING`);
             }
          }
 
-         checkMovement();
-
+         //make sure that I don't go thru the wall
          if(player.object3D.position.x >= 47){
             player.object3D.position.x = 47;
          }
@@ -71,14 +71,6 @@ window.addEventListener("DOMContentLoaded",function() {
          }
 
     }, 10);
-
-    if(winStatus === false){
-        valueDisplay.setAttribute('value', "you lose!")
-    } else if(winStatus === true){
-        valueDisplay.setAttribute('value', "you win!")
-    } else{
-        alueDisplay.setAttribute('value', "keep going!")
-    }
 
 })
 
@@ -111,8 +103,9 @@ function dollRotate(){
     } else {
         doll.setAttribute('rotation', '0 0 0');
         greenLight.pause();
-        valueDisplay.setAttribute('value', "YOU DIED!");
     }
+
+    checkMovement();
 
     setTimeout(dollRotate, randomDelay);
 
@@ -128,7 +121,6 @@ function checkMovement() {
 
     if (dollRotation === 0 && (Math.abs(currentZ - lastZ) > 0.1)) {
             valueDisplay.setAttribute('value', "YOU DIED!");
-            winStatus = false;
             return true;
     }
 
