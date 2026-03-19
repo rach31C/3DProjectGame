@@ -93,13 +93,13 @@
         </a-entity>                 
       </a-entity>
 
-      <a-entity position="-10 25 -148">
+      <a-entity position="-8 25 -148">
         <a-text id="timeDisplay" scale="30 30 30" side="double"></a-text>
         <div id="timeDisplay"></div>
       </a-entity>
       
       <!-- DOLL -->
-      <a-entity position="0 0 -133" rotation="0 180 0">
+      <a-entity position="0 0 -133" rotation="0 0 0">
         <a-gltf-model id="doll" src="#dollSG" scale="5 5 5"></a-gltf-model>
       </a-entity>
 
@@ -108,11 +108,11 @@
       <a-box width="200" depth="300" position=" 0 40 0" rotation="180 0 0" src="#ceiling" repeat="15 20"></a-box>
       <a-sky color="black"></a-sky>
       
-      <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 1000">
+      <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 100">
         <a-cursor>
-          <a-text id="valueDisplay" position="0 -0.5 -1"></a-text>
+          <a-text id="valueDisplay" position="-0.65 -0.75 -0.5"></a-text>
         </a-cursor>
-     </a-camera>
+      </a-camera>
 
     </a-scene>
   </body>

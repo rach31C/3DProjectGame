@@ -1,5 +1,5 @@
 //SOUND
-let greenLight = new Audio('dollAudio.mp3');
+let greenLight = new Audio('audio/dollAudio.mp3');
 let dollActive = false;
 
 window.addEventListener("DOMContentLoaded",function() {
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded",function() {
 
     let timeDisplay = this.document.getElementById("timeDisplay");
     let timeMin = 1;
-    let timeSec = 30;
+    let timeSec = 31;
     let gameOver = false;
 
     //CLOCK
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded",function() {
         }
 
         //Doll: "Red Light, Green Light!"
-        if(timeMin === 1 && timeSec === 28 && !dollActive){
+        if(timeMin === 1 && timeSec === 30 && !dollActive){
             dollRotate();
             dollActive = true;
         }
@@ -53,10 +53,6 @@ window.addEventListener("DOMContentLoaded",function() {
          }
 
          checkMovement();
-
-         if(valueDisplay.getAttribute('value') === "CAUGHT! Player moved during Red Light."){
-            valueDisplay.setAttribute('value', "CAUGHT! Player moved during Red Light.");
-         }
 
          if(player.object3D.position.x >= 47){
             player.object3D.position.x = 47;
@@ -104,16 +100,18 @@ function distance(obj1,obj2){
 function dollRotate(){
     let rotationStatus = doll.getAttribute('rotation');
 
-    let randomDelay = Math.random() * (8000 - 2100) + 2100;
-    let speed = 8 / (randomDelay/1000);
+    let randomDelay = Math.random() * (5000 - 2100) + 2100;
+    let speed = 5 / (randomDelay/1000);
 
-    if (rotationStatus.y === 180) {
-        doll.setAttribute('rotation', '0 0 0');
+    if (rotationStatus.y === 0) {
+        doll.setAttribute('rotation', '0 180 0');
+        greenLight.currentTime = 0;
         greenLight.playbackRate = speed;
         greenLight.play();
     } else {
-        doll.setAttribute('rotation', '0 180 0');
+        doll.setAttribute('rotation', '0 0 0');
         greenLight.pause();
+        valueDisplay.setAttribute('value', "YOU DIED!");
     }
 
     setTimeout(dollRotate, randomDelay);
@@ -128,8 +126,8 @@ function checkMovement() {
 
     let dollRotation = Math.round(doll.getAttribute('rotation').y);
 
-    if (dollRotation === 45 && (Math.abs(currentZ - lastZ) > 0.25)) {
-            valueDisplay.setAttribute('value', "CAUGHT!");
+    if (dollRotation === 0 && (Math.abs(currentZ - lastZ) > 0.1)) {
+            valueDisplay.setAttribute('value', "YOU DIED!");
             winStatus = false;
             return true;
     }
