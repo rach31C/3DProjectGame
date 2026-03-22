@@ -29,12 +29,12 @@ window.addEventListener("DOMContentLoaded",function() {
     let timeMin = 1;
     let timeSec = 31;
 
-    player.addEventListener('loaded', () => {
-        console.log("Player fully loaded");
-        startGame(player, dollActive, finish);
+    doll.addEventListener('loaded', () => {
+        console.log("Game fully loaded");
+        startGame(player, doll, finish);
     });
 
-    function startGame(player, dollActive, finish){
+    function startGame(player, doll, finish){
 
         //CLOCK
         setInterval(()=>{
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded",function() {
                 if(!gameOver){
                     gameOver = true;
                     setTimeout(() => {
-                        window.location.href = 'lose.html';
+                        window.location.href = 'game2.html';
                     }, 2500);
                 } 
 
@@ -72,7 +72,9 @@ window.addEventListener("DOMContentLoaded",function() {
                 if(gameOver){
                     timeDisplay.setAttribute('value', `TIME'S UP!`);
                     valueDisplay.setAttribute('value', `YOU LOSE!`);
-                    window.location.href = 'lose.html'
+                    setTimeout(() => {
+                        window.location.href = 'game2.html';
+                    }, 2000);
                 }
             }
 

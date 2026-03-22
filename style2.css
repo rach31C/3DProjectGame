@@ -1,0 +1,85 @@
+@font-face {
+  font-family: GOS; /* set name */
+  src: url(GOS/Game\ Of\ Squids.otf);
+  src: url(GOS/Game\ Of\ Squids.ttf); /* url of the font */
+}
+
+*{
+    cursor: url('Dalgona/needle.cur') 25 115, auto !important;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: GOS, Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.game-info {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-size: 18px;
+}
+
+.game-info div {
+    margin: 5px 0;
+}
+
+.pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(21, 20px);
+    gap: 0;
+    width: fit-content;
+    margin: 100px auto;
+    position: relative;
+    z-index: 100;
+    background: #5e5e5e;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.pixel-grid button {
+    width: 20px;
+    height: 20px;
+    border: 0px solid #999;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.pixel-grid button:hover {
+    transform: scale(1.2);
+    border: 2px solid #000;
+}
+
+.pixel-grid button:active {
+    transform: scale(0.9);
+}
+
+.target {
+    cursor: url('Dalgona/needle.cur') 25 115, auto !important;
+    position: relative;
+}
+
+.target:hover {
+    box-shadow: 0 0 10px gold;
+}
+
+.cookieOut {
+    cursor: url('Dalgona/needle.cur') 25 115, auto !important;
+}
+
+.wrong {
+    cursor: url('Dalgona/needle.cur') 25 115, auto !important;
+}
+
+/* Hide A-Frame scene initially */
+a-scene {
+    display: none;
+}
