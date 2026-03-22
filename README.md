@@ -3,4 +3,4 @@
 
 Doll Game Finished (bugs: doll not loading in, and the game already starts)
 
-Dalgona Game Finished (still need to fix the loading because its kinda broken)
+Dalgona Game Finished (new map created, new incentive for the players, to go press the button?)
