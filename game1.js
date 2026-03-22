@@ -1,93 +1,103 @@
 //SOUND
 let bgAudio = new Audio('audio/game1.mp3');
 let greenLight = new Audio('audio/dollAudio.mp3');
+
+let valueDisplay;
+let doll;
 let dollActive = false;
+let gameOver = false;
+
+let keyPressed = {};
+
+window.addEventListener('keydown', (event) => {
+    keyPressed[event.key.toLowerCase()] = true;
+});
+
+window.addEventListener('keyup', (event) => {
+    keyPressed[event.key.toLowerCase()] = false;
+});
 
 window.addEventListener("DOMContentLoaded",function() {
-    // let progress = localStorage.getItem('points') || 0;
 
     let player = document.getElementById("player");
-    let doll = document.getElementById("doll");
+    doll = document.getElementById("doll");
     let finish = document.getElementById("finishLine");
-    let valueDisplay = document.getElementById("valueDisplay");
+
+    valueDisplay = document.getElementById("valueDisplay");
 
     let timeDisplay = this.document.getElementById("timeDisplay");
     let timeMin = 1;
     let timeSec = 31;
-    let gameOver = false;
 
-    bgAudio.volume = 0.5;
-    bgAudio.loop = true;
-    bgAudio.play();
+    player.addEventListener('loaded', () => {
+        console.log("Player fully loaded");
+        startGame(player, dollActive, finish);
+    });
 
-    //CLOCK
-    setInterval(()=>{
-        timeDisplay.setAttribute('value', ` ${timeMin}:${timeSec.toString().padStart(2, '0')}`);
-        if(timeSec > 0){
-            timeSec--;
-        } else if(timeMin<=0 && timeSec<=0){
-            gameOver = true;
-        } else {
-            timeMin--;
-            timeSec = 59;
-        }
+    function startGame(player, dollActive, finish){
 
-        //Doll: "Red Light, Green Light!"
-        if(timeMin === 1 && timeSec === 30 && !dollActive){
-            dollRotate();
-            dollActive = true;
-        }
-
-    }, 1000);
-
-    setInterval(()=>{
-        if(player.object3D.position.z <= finish.object3D.position.z){
-            valueDisplay.setAttribute('value', `YOU WIN!`);
-         } else {
-            if(gameOver){
-                timeDisplay.setAttribute('value', `TIME'S UP!`);
-                valueDisplay.setAttribute('value', `YOU LOSE!`);
-                window.location.href = 'scene2.html'
+        //CLOCK
+        setInterval(()=>{
+            timeDisplay.setAttribute('value', ` ${timeMin}:${timeSec.toString().padStart(2, '0')}`);
+            if(timeSec > 0){
+                timeSec--;
+            } else if(timeMin<=0 && timeSec<=0){
+                gameOver = true;
             } else {
-                valueDisplay.setAttribute('value', `KEEP WALKING`);
+                timeMin--;
+                timeSec = 59;
             }
-         }
 
-         //make sure that I don't go thru the wall
-         if(player.object3D.position.x >= 47){
-            player.object3D.position.x = 47;
-         }
-
-         if(player.object3D.position.x <= -47){
-            player.object3D.position.x = -47;
-         }
-
-         if(player.object3D.position.z >= 146){
-            player.object3D.position.z = 146;
-         }
-
-         if(player.object3D.position.z <= -147){
-            player.object3D.position.z = -147;
-         }
-
-    }, 10);
-
-})
+            //Doll: "Red Light, Green Light!"
+            if(timeMin == 1 && timeSec == 30 && !dollActive){
+                dollRotate();
+                dollActive = true;
+            }
 
 
-//https://www.dafont.com/ds-digital.font
+        }, 1000);
 
-function distance(obj1,obj2){
-  let x1 = obj1.object3D.position.x;
-  let y1 = obj1.object3D.position.y;
-  let z1 = obj1.object3D.position.z;
-  let x2 = obj2.object3D.position.x;
-  let y2 = obj2.object3D.position.y;
-  let z2 = obj2.object3D.position.z;
+        setInterval(()=>{
+            if(player.object3D.position.z <= finish.object3D.position.z){
+                valueDisplay.setAttribute('value', `YOU WIN!`); 
 
-  let d = Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2) + Math.pow(z1-z2,2));
-  return d;
-}   
+                if(!gameOver){
+                    gameOver = true;
+                    setTimeout(() => {
+                        window.location.href = 'lose.html';
+                    }, 2500);
+                } 
+
+            } else {
+                if(gameOver){
+                    timeDisplay.setAttribute('value', `TIME'S UP!`);
+                    valueDisplay.setAttribute('value', `YOU LOSE!`);
+                    window.location.href = 'lose.html'
+                }
+            }
+
+        }, 500);
+
+        setInterval(()=>{
+            if(player.object3D.position.x >= 47){
+                player.object3D.position.x = 47;
+            }
+
+            if(player.object3D.position.x <= -47){
+                player.object3D.position.x = -47;
+            }
+
+            if(player.object3D.position.z >= 146){
+                player.object3D.position.z = 146;
+            }
+
+            if(player.object3D.position.z <= -147){
+                player.object3D.position.z = -147;
+            }
+
+        }, 10);
+    }
+});
 
 function dollRotate(){
     let rotationStatus = doll.getAttribute('rotation');
@@ -103,29 +113,35 @@ function dollRotate(){
     } else {
         doll.setAttribute('rotation', '0 0 0');
         greenLight.pause();
-    }
 
-    checkMovement();
+        let movementCheckInterval = setInterval(() => {
+            if(isMoving() && doll.object3D.rotation.y == 0 && !gameOver){
+                clearInterval(movementCheckInterval);
+                valueDisplay.setAttribute('value', `YOU LOSE!`);
+                gameOver = true;
+                setTimeout(() => {
+                    window.location.href = 'lose.html';
+                }, 2500);
+            }
+        }, 100);
+
+        setTimeout(() => {
+            clearInterval(movementCheckInterval);
+        }, randomDelay);
+    }
 
     setTimeout(dollRotate, randomDelay);
 
     return rotationStatus;
 }
 
-let lastZ = 135;
-
-function checkMovement() {
-    let currentZ = player.object3D.position.z;
-
-    let dollRotation = Math.round(doll.getAttribute('rotation').y);
-
-    if (dollRotation === 0 && (Math.abs(currentZ - lastZ) > 0.1)) {
-            valueDisplay.setAttribute('value', "YOU DIED!");
-            return true;
-    }
-
-    lastZ = currentZ;
+function isMoving(){
+    return keyPressed['w'] || keyPressed['a'] || keyPressed['s'] || keyPressed['d'];
 }
+
+
+
+
 
 
 

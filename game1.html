@@ -3,19 +3,6 @@
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
     <script src="game1.js"></script>
-
-    <style>
-      @font-face {
-        font-family: 'digital'; /* set name */
-        src: url('digital.ttf'); /* url of the font */
-      }
-
-      #timeDisplay {
-        font-family: digital;
-        color: red;
-      }
-      
-    </style>
   </head>
 
   <body>
@@ -103,12 +90,12 @@
         <a-gltf-model id="doll" src="#dollSG" scale="5 5 5"></a-gltf-model>
       </a-entity>
 
-      <a-box id="finishLine" position="0 -0.8 -125" color="red" width="100" height="2" depth="1.5" ></a-box>
+      <a-box id="finishLine" position="0 -0.8 -125" color="#FF3F79" width="100" height="2" depth="1.5" ></a-box>
       <a-plane width="200" height="300" rotation="-90 0 0" src="#ground" repeat="15 20"></a-plane>
       <a-box width="200" depth="300" position=" 0 40 0" rotation="180 0 0" src="#ceiling" repeat="15 20"></a-box>
       <a-sky color="black"></a-sky>
       
-      <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 500">
+      <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 75">
         <a-cursor>
           <a-text id="valueDisplay" position="-0.65 -0.75 -0.5"></a-text>
         </a-cursor>
@@ -116,4 +103,12 @@
 
     </a-scene>
   </body>
+  <script>
+    window.onload = () => {
+      let bgAudio = new Audio('audio/game1.mp3');
+      bgAudio.volume = 0.45;
+      bgAudio.loop = true;
+      bgAudio.play();
+    };
+  </script>
 </html>
