@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded",function() {
                 otherGuy.setAttribute('rotation', {x:-90,y:0,z:0});
                 otherGuy.setAttribute('position', {x:0,y:-0.75,z:0});
                 setTimeout(() => {
-                    window.location.href = 'lose.html';
+                    window.location.href = 'ending.html';
                 }, 2000);
 
                 // 🚫 STOP EVERYTHING
