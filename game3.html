@@ -10,6 +10,7 @@
       
       <a-assets>
         <a-asset-item id="tugOfWar" src="squid_game_tug_of_war/scene.gltf"></a-asset-item>
+<<<<<<< HEAD
         <audio id="bgMusic" src="audio/game3.mp3" preload="auto"></audio>
         <audio id="loseSound" src="audio/scream.mp3"></audio>
         <audio id="winSound" src="audio/cheer.mp3"></audio>
@@ -28,10 +29,32 @@
       <a-light type="ambient" intensity="0.6"></a-light>
 
       <!-- Center Line -->
+=======
+        <img id="rope" src="TugOfWar/rope.jpeg">
+      </a-assets>
+
+      <!-- Add Camera -->
+      <a-camera id="player" position="0 2 0"> 
+          <a-entity class="game-info">
+              <a-text id="time-display" position="-1.65 0.7 -1.1" scale="0.6 0.6 0.6">Time: 50</a-text>
+              <a-plane width = "0.75" height = "0.3" position="0.005 -0.55 -1.1" color="black" ></a-plane>
+              <a-plane width = "0.8" height = "0.35" position="0.005 -0.55 -1.105" color="#249f9c" ></a-plane>
+              <a-text id="number-display" position="-0.25 -0.5 -1" scale="0.6 0.6 0.6"> </a-text>
+          </a-entity>
+      </a-camera>
+
+      <!-- THE ROPE -->
+      <a-cylinder id="rope" position="0 1.6 -12" depth="0.2" height="15" radius="0.25" rotation="-90 0 0" src="#rope" color="#fef7f1" repeat="1 5" side="double"> </a-cylinder>
+
+       <!-- Light -->
+      <a-light type="directional" intensity="1" position="2 4 2"></a-light>
+      <a-light type="ambient" intensity="0.6"></a-light>
+>>>>>>> 01bf2bb (game 3 v2)
       
 
       <!-- Tug of War Model -->
       
+<<<<<<< HEAD
       <a-entity position="0 0 -25" rotation="0 90 0">
         <a-gltf-model src="#tugOfWar"></a-gltf-model>
       </a-entity>
@@ -78,4 +101,21 @@
 </div>
 
   </body>
+=======
+      <a-entity  id="TOWMap" position="0 0 -25" rotation="0 90 0">
+        <a-gltf-model src="#tugOfWar"></a-gltf-model>
+      </a-entity>
+
+      <a-sky color="black"></a-sky>
+    </a-scene>
+  </body>
+  <script>
+    window.onload = () => {
+      let bgAudio = new Audio('audio/game3.mp3');
+      bgAudio.volume = 0.45;
+      bgAudio.loop = true;
+      bgAudio.play();
+    };
+  </script>
+>>>>>>> 01bf2bb (game 3 v2)
 </html>

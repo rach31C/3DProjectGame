@@ -7,20 +7,32 @@
   <body>
     <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable">
       <a-assets>
+          <a-asset-item id="dalgonaScene" src="dalgonaScene/scene.gltf"></a-asset-item>
+
           <img id="ground" src="Dalgona/Ground_baseColor2.jpeg">
           <img id="wall" src="Dalgona/Clouds_baseColor.jpeg">
       </a-assets>
 
-        <a-entity>
+      <a-entity position="0 0 3" rotation="0 180 0">
+        <a-gltf-model  id ="dalgonaMap" src="#dalgonaScene"></a-gltf-model> 
+        <a-entity id="startBtn" position="0.005 4 79.5" color="gray" start-button>
+          <a-plane width="6" height="2" color="#222" material="shader: flat; side: double" class="clickable"  start-button> </a-plane>
+          <a-text id="start" value="START THE GAME" position="1.75 0 -0.05" rotation="0 180 0" scale="2 2 2" color ="red" class="clickable"  start-button></a-text>
+        </a-entity>
+      </a-entity>
+
+
+        <!-- <a-entity>
           <a-cylinder radius="35" height="150" rotation="-90 0 0" src="#wall" side="double" repeat="5 5"></a-cylinder>
           <a-plane width="200" height="200" rotation="-90 0 0" src="#ground" repeat="15 20"></a-plane>
-        </a-entity>
+        </a-entity> -->
 
-        <a-entity id="startBtn" position="0.005 10 74.5" color="gray" start-button>
+        <!-- <a-entity id="startBtn" position="0.005 10 74.5" color="gray" start-button>
           <a-plane width="24" height="8" color="#222" material="shader: flat; side: double" class="clickable"  start-button> </a-plane>
           <a-text id="start" value="PRESS FOR COOKIE" position="7.5 0 -0.05" rotation="0 180 0" scale="8 8 8" color ="red" class="clickable"  start-button></a-text>
-        </a-entity>
+        </a-entity> -->
         
+<<<<<<< HEAD
       <a-camera id="player" position="0.005 4 40" wasd-controls="fly:false; acceleration: 100"></a-camera>
       
       <!-- door -->
@@ -187,6 +199,10 @@
   <!-- bottom base -->
   <a-cylinder position="0 -6 0" height="1" radius="3" color="yellow"></a-cylinder>
 </a-entity>
+=======
+      <a-camera id="player" position="0.005 1.5 1" wasd-controls="fly:false; acceleration: 1000"></a-camera>
+        
+>>>>>>> 01bf2bb (game 3 v2)
 
     </a-scene>
   </body>

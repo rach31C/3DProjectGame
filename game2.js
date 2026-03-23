@@ -11,40 +11,42 @@ AFRAME.registerComponent('start-button', {
 let dalgonaMap;
 window.addEventListener("DOMContentLoaded",function() {
   let player = document.getElementById('player');
-  dalgonaMap = document.querySelector('a-scene');
+  dalgonaMap = document.getElementById('dalgonaMap');
   
-  dalgonaMap.addEventListener('loaded', () => {
+  dalgonaMap.addEventListener('model-loaded', () => {
         console.log("Game fully loaded");
-        startGame(dalgonaMap, player);
+        startGame();
   });
   
-  function startGame(dalgonaMap, player){
-
+  function startGame(){
     setInterval(()=>{
-        if(player.object3D.position.x >= 30){
-            player.object3D.position.x = 30;
+        if(player.object3D.position.x >= 6){
+            player.object3D.position.x = 6;
         }
 
-        if(player.object3D.position.x <= -30){
-            player.object3D.position.x = -30;
+        if(player.object3D.position.x <= -6){
+            player.object3D.position.x = -6;
         }
 
-        if(player.object3D.position.z >= 70){
-            player.object3D.position.z = 70;
+        if(player.object3D.position.z >= 1){
+            player.object3D.position.z = 1;
         }
 
-        if(player.object3D.position.z <= -72){
-            player.object3D.position.z = -72;
+        if(player.object3D.position.z <= -75){
+            player.object3D.position.z = -75;
         }
 
     }, 10);
-    
-    const startBtn = document.querySelector('#startBtn');
+  }
 
-    if (!startBtn) {
-      console.error('startBtn not found');
-      return;
+  AFRAME.registerComponent('start-button', {
+    init: function () {
+      this.el.addEventListener('click', function (evt) {
+        window.location.href = `cookie${Math.round(Math.random()*2+1)}.html`;
+        console.log()
+      });
     }
+<<<<<<< HEAD
 
     // Fallback direct listener for click events if A-Frame component loads late.
     startBtn.addEventListener('click', () => {
@@ -54,6 +56,9 @@ window.addEventListener("DOMContentLoaded",function() {
 
   
 
+=======
+  });
+>>>>>>> 01bf2bb (game 3 v2)
 
 });
 

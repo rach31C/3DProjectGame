@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded",function() {
 
     let player = document.getElementById("player");
     doll = document.getElementById("doll");
+    let gltfModel = doll.querySelector('a-gltf-model');
     let finish = document.getElementById("finishLine");
 
     valueDisplay = document.getElementById("valueDisplay");
@@ -29,12 +30,12 @@ window.addEventListener("DOMContentLoaded",function() {
     let timeMin = 1;
     let timeSec = 31;
 
-    doll.addEventListener('loaded', () => {
+    doll.addEventListener('model-loaded', () => {
         console.log("Game fully loaded");
-        startGame(player, doll, finish);
+        startGame();
     });
 
-    function startGame(player, doll, finish){
+    function startGame(){
 
         //CLOCK
         setInterval(()=>{
