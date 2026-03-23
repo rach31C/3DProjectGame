@@ -1,0 +1,11 @@
+Model Information:
+* title:	Brandless Combat Survival Knife
+* source:	https://sketchfab.com/3d-models/brandless-combat-survival-knife-75125143837247ff9d306428ac2252f9
+* author:	Blenzy (https://sketchfab.com/Blenzy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Brandless Combat Survival Knife" (https://sketchfab.com/3d-models/brandless-combat-survival-knife-75125143837247ff9d306428ac2252f9) by Blenzy (https://sketchfab.com/Blenzy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,266 @@
+
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="game5.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="purpleWall" src="GlassBridge/Wall.png">
+        <img id="redWall" src="GlassBridge/RedW.png">
+        <img id="light" src="GlassBridge/Lights.png">
+        <img id="door" src="GlassBridge/door.png">
+      </a-assets>
+
+      <!-- PLAYER -->
+
+      <a-box position="0 15 -50" width="45" height="90" rotation="0 0 0" color="#070511"></a-box>
+      <!-- Left Curve Walls-->
+      <a-box position="-30 15 -45" width="25" height="90" rotation="0 30 0" color="#070511"></a-box>
+      <a-box position="-30 15 83" width="25" height="90" rotation="0 -30 0" color="#070511"></a-box>
+      <a-box position="-47 15 -29.5" width="25" height="90" rotation="0 55 0" color="#070511"></a-box>
+      <a-box position="-47 15 68" width="25" height="90" rotation="0 -55 0" color="#070511"></a-box>
+      <a-box position="-57 15 -9" width="25" height="90" rotation="0 75 0" color="#070511"></a-box>
+      <a-box position="-57 15 47" width="25" height="90" rotation="0 -75 0" color="#070511"></a-box>
+      <a-box position="-60.2 15 20" width="35" height="90" rotation="0 90 0" color="#070511"></a-box>
+
+      <!-- some details wall L -->
+      <a-box position="-40.1 15 -38" width="1" height="90" rotation="0 30 0" src="GlassBridge/Lights.png"></a-box>
+      <a-box position="-19.8 15 87.9" width="1" height="90" rotation="0 -30 0" color="yellow"></a-box>
+      <a-box position="-54 15 -19" width="1" height="90" rotation="0 55 0" color="yellow"></a-box>
+      <a-box position="-40 15 76.9" width="1" height="90" rotation="0 -55 0" color="yellow"></a-box>
+      <a-box position="-59.9 15 3" width="1" height="90" rotation="0 75 0" color="yellow"></a-box>
+      <a-box position="-54 15 57" width="1" height="90" rotation="0 -75 0" color="yellow"></a-box>
+      <a-box position="-60 15 35" width="1" height="90" rotation="0 90 0" color="yellow"></a-box>
+
+      <!-- Right Curve Walls-->
+      <a-box position="30 15 -45" width="25" height="90" rotation="0 -30 0" color="#070511"></a-box>
+      <a-box position="30 15 83" width="25" height="90" rotation="0 30 0" color="#070511"></a-box>
+      <a-box position="47 15 -29.5" width="25" height="90" rotation="0 -55 0" color="#070511"></a-box>
+      <a-box position="47 15 68" width="25" height="90" rotation="0 55 0" color="#070511"></a-box>
+      <a-box position="57 15 -9" width="25" height="90" rotation="0 -75 0" color="#070511"></a-box>
+      <a-box position="57 15 47" width="25" height="90" rotation="0 75 0" color="#070511"></a-box>
+      <a-box position="60.2 15 20" width="35" height="90" rotation="0 -90 0" color="#070511"></a-box>
+
+      <!-- some details wall R -->
+      <a-box position="40.1 15 -38" width="1" height="90" rotation="0 30 0" color="yellow"></a-box>
+      <a-box position="19.8 15 87.9" width="1" height="90" rotation="0 -30 0" color="yellow"></a-box>
+      <a-box position="54 15 -19" width="1" height="90" rotation="0 55 0" color="yellow"></a-box>
+      <a-box position="40 15 76.9" width="1" height="90" rotation="0 -55 0" color="yellow"></a-box>
+      <a-box position="59.9 15 3" width="1" height="90" rotation="0 75 0" color="yellow"></a-box>
+      <a-box position="54 15 57" width="1" height="90" rotation="0 -75 0" color="yellow"></a-box>
+      <a-box position="60 15 35" width="1" height="90" rotation="0 90 0" color="yellow"></a-box>
+    
+      <a-box position="0 15 88.4" width="45" height="90" rotation="0 0 0" color="#070511"></a-box>
+
+      <a-entity position="0 20 0">
+      <!-- Exit -->
+      <a-cylinder position="0 12.2 -50" radius="15" height="1" rotation="0 0 0" color="#3f1b15"></a-cylinder>
+      <!-- detail for the floor edge right side-->
+      <a-box position="0 12.3 -35" width="1.5" height="6.8" rotation="0 0 90" color="#eaba22"></a-box>
+      <a-box position="6 12.3 -36" width="1.5" height="6" rotation="0 20 90" color="#eaba22"></a-box>
+      <a-box position="10 12.3 -38.5" width="1.5" height="6" rotation="0 45 90" color="#eaba22"></a-box>
+      <a-box position="13 12.3 -42" width="1.5" height="6" rotation="0 56 90" color="#eaba22"></a-box>
+      <a-box position="14.5 12.3 -47" width="1.5" height="6" rotation="0 90 90" color="#eaba22"></a-box>
+       <!-- left side -->
+      <a-box position="-6 12.3 -36" width="1.5" height="6" rotation="0 -20 -90" color="#eaba22"></a-box>
+      <a-box position="-10 12.3 -38.5" width="1.5" height="6" rotation="0 -45 -90" color="#eaba22"></a-box>
+      <a-box position="-13 12.3 -42" width="1.5" height="6" rotation="0 -56 -90" color="#eaba22"></a-box>
+      <a-box position="-14.5 12.3 -47" width="1.5" height="6" rotation="0 -90 -90" color="#eaba22"></a-box>
+
+      <a-cylinder position="0 32 -50" radius="15" height="3" rotation="0 0 0" color="#1f3b52"></a-cylinder>
+      <a-box position="-13 22 -48.8" width="3" height="20" rotation="0 0 0" color="#1f3b52"></a-box>
+      <a-box position="13 22 -48.8" width="3" height="20" rotation="0 0 0" color="#1f3b52"></a-box>
+
+      <a-box position="-10 19 -48.7" width="1" height="13" rotation="0 0 0" color="#1f3b52"></a-box>
+      <a-box position="10 19 -48.7" width="1" height="13" rotation="0 0 0" color="#1f3b52"></a-box>
+      <a-box position="-9.4 26 -48.7" width="1" height="2" rotation="0 0 -45" color="#1f3b52"></a-box>
+      <a-box position="9.4 26 -48.7" width="1" height="2" rotation="0 0 45" color="#1f3b52"></a-box>
+      <a-box position="-8 27 -48.7" width="1" height="2" rotation="0 0 -60" color="#1f3b52"></a-box>
+      <a-box position="8 27 -48.7" width="1" height="2" rotation="0 0 60" color="#1f3b52"></a-box>
+      <a-box position="0 27.5 -48.7" width="1" height="15" rotation="0 0 90" color="#1f3b52"></a-box>
+      <a-box position="0 20 -49.5" width="15" height="15" rotation="0 0 0" color="#32000e"></a-box>
+      <a-box position="-7.5 18 -49.5" width="5" height="15" rotation="0 0 0" color="#32000e"></a-box>
+      <a-box position="7.5 18 -49.5" width="5" height="15" rotation="0 0 0" color="#32000e"></a-box>
+      <a-box position="-6.7 26 -49.5" width="5" height="1.5" rotation="0 0 0" color="#32000e"></a-box>
+      <a-box position="6.7 26 -49.5" width="5" height="1.5" rotation="0 0 0" color="#32000e"></a-box>
+
+      <!-- door -->
+      <a-box position="-4.1 15 -49" width="8" height="20" rotation="0 0 0" src="GlassBridge/door.png"></a-box>
+      <a-box position="-4.1 17 -48.5" width="7" height="0.5" rotation="0 0 40" color="blue"></a-box>
+      <a-box position="4.1 15 -49" width="8" height="20" rotation="0 0 0" src="GlassBridge/door.png"></a-box>
+      <a-box position="4.1 17 -48.5" width="7" height="0.5" rotation="0 0 -40" color="blue"></a-box>
+
+       <!-- Entrance -->
+      
+      <a-box position="-10 19 87.5" width="1" height="13" rotation="0 0 0" color="#1f3b52"></a-box>
+      <a-box position="10 19 87.5" width="1" height="13" rotation="0 0 0" color="#1f3b52"></a-box>
+      <a-box position="-9.4 26 87.5" width="1" height="2" rotation="0 0 -45" color="#1f3b52"></a-box>
+      <a-box position="9.4 26 87.5" width="1" height="2" rotation="0 0 45" color="#1f3b52"></a-box>
+      <a-box position="-8 27 87.5" width="1" height="2" rotation="0 0 -60" color="#1f3b52"></a-box>
+      <a-box position="8 27 87.5" width="1" height="2" rotation="0 0 60" color="#1f3b52"></a-box>
+      <a-box position="0 27.5 87.5" width="1" height="15" rotation="0 0 90" color="#1f3b52"></a-box>
+      <a-box position="0 20 88" width="15" height="15" rotation="0 0 0" color="#2a0508"></a-box>
+      <a-box position="-7.5 18 88" width="5" height="15" rotation="0 0 0" color="#2a0508"></a-box>
+      <a-box position="7.5 18 88" width="5" height="15" rotation="0 0 0" color="#2a0508"></a-box>
+      <a-box position="-6.7 26 88" width="5" height="1.5" rotation="0 0 0" color="#2a0508"></a-box>
+      <a-box position="6.7 26 88" width="5" height="1.5" rotation="0 0 0" color="#2a0508"></a-box>
+      
+      <a-box position="-7 12 -30" width="1" height="195" rotation="90 0 0" color="#3f344e"></a-box>
+      <a-box position="7 12 -30" width="1" height="195" rotation="90 0 0" color="#3f344e"></a-box>
+      <a-box position="-1 12 -30" width="1" height="195" rotation="90 0 0" color="#3f344e"></a-box>
+      <a-box position="1 12 -30" width="1" height="195" rotation="90 0 0" color="#3f344e"></a-box>
+       
+      <!-- door -->
+      <a-box position="-4.1 15 87.6" width="8" height="20" rotation="0 0 0" src="GlassBridge/door.png"></a-box>
+      <a-box position="4.1 15 87.6" width="8" height="20" rotation="0 0 0" src="GlassBridge/door.png"></a-box>
+
+      <!-- LEFT DECO -->
+      <a-cylinder position="9 14 70" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="9 16.3 70" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+      <a-cylinder position="9 14 77.5" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="9 16.3 77.5" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+      <a-cylinder position="9 14 85" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="9 16.3 85" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+      <!-- RIGHT DECO -->
+      <a-cylinder position="-9 14 70" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="-9 16.3 70" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+      <a-cylinder position="-9 14 77.5" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="-9 16.3 77.5" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+      <a-cylinder position="-9 14 85" radius="0.5" height="4" rotation="0 0 0" color="#ce9852"></a-cylinder>
+      <a-sphere position="-9 16.3 85" radius="0.4" height="4" rotation="0 0 0" color="#ce9852"></a-sphere>
+
+      <!-- Left rope R-->
+      <a-cylinder position="9.2 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <!-- Left rope L-->
+      <a-cylinder position="9.2 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <!-- Middle -->
+      <a-cylinder position="9.2 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 13.6 73.6" radius="0.3" height="3.5" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+
+      <a-entity position="0 0 7.5">
+      <a-cylinder position="9.2 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9.2 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9.2 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 13.6 73.6" radius="0.3" height="3.5" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      </a-entity>
+
+      <!-- Right rope R-->
+      <a-cylinder position="-9.2 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-8.8 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-9 14.4 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <!-- Left rope L-->
+      <a-cylinder position="-9.2 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-8.8 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-9 14.4 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <!-- Middle -->
+      <a-cylinder position="-9.2 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-8.8 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="-9 13.6 73.6" radius="0.3" height="3.5" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+
+      <a-entity position="-18 0 7.5">
+      <a-cylinder position="9.2 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 76.2" radius="0.3" height="2.5" rotation="50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9.2 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.9 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 14.4 71" radius="0.3" height="2.5" rotation="-50 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9.2 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="8.8 14.1 73.5" radius="0.3" height="4" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      <a-cylinder position="9 13.6 73.6" radius="0.3" height="3.5" rotation="90 0 0" color="#0c1a87"></a-cylinder>
+      </a-entity>
+
+      <!-- THE GLASS  -->
+      <a-box class="glass" position="4 12 -30" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 -30" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 -22" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 -22" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 -14" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 -14" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 -6.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 -6.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 1" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 1" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 8.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 8.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 16" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 16" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 23.9" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 23.9" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 31.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 31.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 39.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 39.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 47.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 47.8" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 55" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 55" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box class="glass" position="4 12 62.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+      <a-box class="glassL" position="-4 12 62.5" width="5" height="5" rotation="90 0 0" color="gray" opacity="0.5"></a-box>
+
+      <a-box position="0 12 77.9" width="20" height="20" rotation="90 0 0" color="#3f1b15"></a-box>
+      <a-box position="0 12 68" width="20" height="1" rotation="90 0 0" color="#c2bd5f"></a-box>
+      <a-box position="0 12.5 68" width="20" height="1" rotation="90 0 0" color="#c2bd5f"></a-box>
+      <a-box position="-10.7 12 68.9" width="3" height="1" rotation="90 45 0" color="#c2bd5f"></a-box>
+      <a-box position="-10.7 12.5 68.9" width="3" height="1" rotation="90 45 0" color="#c2bd5f"></a-box>
+      <a-box position="10.7 12 68.9" width="3" height="1" rotation="90 -45 0" color="#c2bd5f"></a-box>
+      <a-box position="10.7 12.5 68.9" width="3" height="1" rotation="90 -45 0" color="#c2bd5f"></a-box>
+      <a-box position="-11.6 12 79.6" width="20" height="1" rotation="90 90 0" color="#c2bd5f"></a-box>
+      <a-box position="-10.5 12 79" width="20" height="2" rotation="90 90 0" color="#3f1b15"></a-box>
+      <a-box position="11.6 12 79.6" width="20" height="1" rotation="90 90 0" color="#c2bd5f"></a-box>
+      <a-box position="-11.6 12.5 79.6" width="20" height="1" rotation="90 90 0" color="#c2bd5f"></a-box>
+      <a-box position="11.6 12.5 79.6" width="20" height="1" rotation="90 90 0" color="#c2bd5f"></a-box>
+      <a-box position="10.5 12 79" width="20" height="2" rotation="90 90 0" color="#3f1b15"></a-box>
+      </a-entity>
+
+       <!--cover -->
+       <a-box position="0 16 -48" width="30" height="30" color="black"></a-box>
+       <a-box position="0 16 87" width="30" height="30" color="black"></a-box>
+
+      <a-box id="finishLine" position="0 40 -36" color="#FF3F79" width="100" height="2" depth="1.5" opacity = "0" ></a-box>
+
+
+       <a-camera id="player" position="0 40 85" wasd-controls="fly:false; acceleration: 100">
+          <a-text id = "timeDisplay" position="-1.65 0.7 -1.1" scale="0.6 0.6 0.6"></a-text>
+       </a-camera>
+
+
+
+
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="150" height="200" color="black"></a-plane>
+      <a-sky color="black"></a-sky>
+    </a-scene>
+  </body>
+  <script>
+    window.onload = () => {
+        let bgAudio = new Audio('audio/game5.mp3');
+        bgAudio.volume = 0.45;
+        bgAudio.loop = true;
+        bgAudio.play();
+    };
+  </script>
+</html>

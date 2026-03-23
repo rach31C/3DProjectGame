@@ -63,7 +63,6 @@ window.addEventListener("DOMContentLoaded",function() {
                 valueDisplay.setAttribute('value', `YOU WIN!`); 
 
                 if(!gameOver){
-                    gameOver = true;
                     setTimeout(() => {
                         window.location.href = 'game2.html';
                     }, 2500);
