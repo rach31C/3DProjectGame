@@ -56,6 +56,15 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     alert(message);
+
+     setTimeout(() => {
+       
+        if (message.includes("WIN")) {
+            window.location.href = "ending.html";
+        } else {
+            window.location.href = "";
+        }
+    }, 500); 
 }
 
 // Timer function
