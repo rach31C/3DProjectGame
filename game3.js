@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
     function endGame(message) {
     gameOver = true;
 
-    // 🎵 停止背景音乐
+    // 🎵 
     let bgMusic = document.getElementById("bgMusic");
     if (bgMusic) {
         bgMusic.pause();
