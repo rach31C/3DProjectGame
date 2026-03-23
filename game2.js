@@ -12,32 +12,25 @@ let dalgonaMap;
 window.addEventListener("DOMContentLoaded",function() {
   let player = document.getElementById('player');
   dalgonaMap = document.getElementById('dalgonaMap');
-  
-  dalgonaMap.addEventListener('model-loaded', () => {
-        console.log("Game fully loaded");
-        startGame();
-  });
-  
-  function startGame(){
-    setInterval(()=>{
-        if(player.object3D.position.x >= 6){
-            player.object3D.position.x = 6;
-        }
 
-        if(player.object3D.position.x <= -6){
-            player.object3D.position.x = -6;
-        }
+  setInterval(()=>{
+      if(player.object3D.position.x >= 30){
+          player.object3D.position.x = 30;
+      }
 
-        if(player.object3D.position.z >= 1){
-            player.object3D.position.z = 1;
-        }
+      if(player.object3D.position.x <= -30){
+          player.object3D.position.x = -30;
+      }
 
-        if(player.object3D.position.z <= -75){
-            player.object3D.position.z = -75;
-        }
+      if(player.object3D.position.z >= 72){
+          player.object3D.position.z = 72;
+      }
+
+      if(player.object3D.position.z <= -72){
+          player.object3D.position.z = -72;
+      }
 
     }, 10);
-  }
 
   AFRAME.registerComponent('start-button', {
     init: function () {
@@ -45,8 +38,7 @@ window.addEventListener("DOMContentLoaded",function() {
         window.location.href = `cookie${Math.round(Math.random()*2+1)}.html`;
         console.log()
       });
-    }
-  });
-
+  }
+});
 });
 
