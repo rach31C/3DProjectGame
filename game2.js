@@ -46,19 +46,7 @@ window.addEventListener("DOMContentLoaded",function() {
         console.log()
       });
     }
-<<<<<<< HEAD
-
-    // Fallback direct listener for click events if A-Frame component loads late.
-    startBtn.addEventListener('click', () => {
-      window.location.href = `cookie${Math.round(Math.random() * 2 + 1)}.html`;
-    });
-  };
-
-  
-
-=======
   });
->>>>>>> 01bf2bb (game 3 v2)
 
 });
 
