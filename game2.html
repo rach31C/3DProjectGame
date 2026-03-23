@@ -21,8 +21,172 @@
           <a-text id="start" value="PRESS FOR COOKIE" position="7.5 0 -0.05" rotation="0 180 0" scale="8 8 8" color ="red" class="clickable"  start-button></a-text>
         </a-entity>
         
-      <a-camera id="player" position="0.005 4 -65" wasd-controls="fly:false; acceleration: 1000"></a-camera>
-        
+      <a-camera id="player" position="0.005 4 40" wasd-controls="fly:false; acceleration: 100"></a-camera>
+      
+      <!-- door -->
+      <a-box position="28 0 75" height="17" width="7" rotation="0 0 0" src="circle.png" repeat="1 2"></a-box>
+
+      <!-- triangle -->
+      <a-box position="19 0 75" height="17" width="7" rotation="0 0 0" src="triangle.png" repeat="1 2"></a-box>
+      
+      <!-- umbrella -->
+      <a-box position="-29 0 75" height="17" width="7" rotation="0 0 0" src="umbrella.png" repeat="1 2"></a-box>
+   
+
+      <!-- star -->
+      <a-box position="-19.5 0 75" height="17" width="7" rotation="0 0 0" src="star door.png" repeat="1 2"></a-box>
+      
+      <!-- SLIDE -->
+<a-entity id="slide" position="0 0 20">
+
+  <!-- slide ramp -->
+  <a-plane 
+    position="0 4 0" 
+    rotation="30 0 0" 
+    width="6" 
+    height="20" 
+    color="#bbbbbb">
+  </a-plane>
+
+  <!-- side rails -->
+  <a-box position="-3.2 4 0" rotation="30 0 0" width="0.5" height="20" depth="0.5" color="green"></a-box>
+  <a-box position="3.2 4 0" rotation="30 0 0" width="0.5" height="20" depth="0.5" color="green"></a-box>
+
+  <!-- top platform -->
+  <a-box position="0 10 6" width="8" height="1" depth="8" color="yellow"></a-box>
+
+  <!-- ladder -->
+  <a-box position="4 5 10" width="1" height="10" depth="1" color="gray"></a-box>
+
+</a-entity>
+
+<!-- JUNGLE GYM -->
+<a-entity id="jungleGym" position="-20 0 -20">
+
+  <!-- BOTTOM (yellow large frame) -->
+  <!-- vertical bars -->
+  <a-box position="-10 3 -10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="10 3 -10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="-10 3 10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="10 3 10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+
+  <!-- top square -->
+  <a-box position="0 6 -10" width="20" height="0.3" depth="0.3" color="yellow"></a-box>
+  <a-box position="0 6 10" width="20" height="0.3" depth="0.3" color="yellow"></a-box>
+  <a-box position="-10 6 0" width="0.3" height="0.3" depth="20" color="yellow"></a-box>
+  <a-box position="10 6 0" width="0.3" height="0.3" depth="20" color="yellow"></a-box>
+
+  <!-- MIDDLE (green frame) -->
+  <a-entity position="0 6 0">
+    <a-box position="-6 3 -6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="6 3 -6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="-6 3 6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="6 3 6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+
+    <a-box position="0 6 -6" width="12" height="0.3" depth="0.3" color="green"></a-box>
+    <a-box position="0 6 6" width="12" height="0.3" depth="0.3" color="green"></a-box>
+    <a-box position="-6 6 0" width="0.3" height="0.3" depth="12" color="green"></a-box>
+    <a-box position="6 6 0" width="0.3" height="0.3" depth="12" color="green"></a-box>
+  </a-entity>
+
+  <!-- TOP (red small frame) -->
+  <a-entity position="0 12 0">
+    <a-box position="-3 3 -3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="3 3 -3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="-3 3 3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="3 3 3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+
+    <a-box position="0 6 -3" width="6" height="0.3" depth="0.3" color="red"></a-box>
+    <a-box position="0 6 3" width="6" height="0.3" depth="0.3" color="red"></a-box>
+    <a-box position="-3 6 0" width="0.3" height="0.3" depth="6" color="red"></a-box>
+    <a-box position="3 6 0" width="0.3" height="0.3" depth="6" color="red"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<a-entity id="jungleGym" position="20 0 40">
+
+  <!-- BOTTOM (yellow large frame) -->
+  <!-- vertical bars -->
+  <a-box position="-10 3 -10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="10 3 -10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="-10 3 10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+  <a-box position="10 3 10" depth="0.3" width="0.3" height="6" color="yellow"></a-box>
+
+  <!-- top square -->
+  <a-box position="0 6 -10" width="20" height="0.3" depth="0.3" color="yellow"></a-box>
+  <a-box position="0 6 10" width="20" height="0.3" depth="0.3" color="yellow"></a-box>
+  <a-box position="-10 6 0" width="0.3" height="0.3" depth="20" color="yellow"></a-box>
+  <a-box position="10 6 0" width="0.3" height="0.3" depth="20" color="yellow"></a-box>
+
+  <!-- MIDDLE (green frame) -->
+  <a-entity position="0 6 0">
+    <a-box position="-6 3 -6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="6 3 -6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="-6 3 6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+    <a-box position="6 3 6" depth="0.3" width="0.3" height="6" color="green"></a-box>
+
+    <a-box position="0 6 -6" width="12" height="0.3" depth="0.3" color="green"></a-box>
+    <a-box position="0 6 6" width="12" height="0.3" depth="0.3" color="green"></a-box>
+    <a-box position="-6 6 0" width="0.3" height="0.3" depth="12" color="green"></a-box>
+    <a-box position="6 6 0" width="0.3" height="0.3" depth="12" color="green"></a-box>
+  </a-entity>
+
+  <!-- TOP (red small frame) -->
+  <a-entity position="0 12 0">
+    <a-box position="-3 3 -3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="3 3 -3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="-3 3 3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+    <a-box position="3 3 3" depth="0.3" width="0.3" height="6" color="red"></a-box>
+
+    <a-box position="0 6 -3" width="6" height="0.3" depth="0.3" color="red"></a-box>
+    <a-box position="0 6 3" width="6" height="0.3" depth="0.3" color="red"></a-box>
+    <a-box position="-3 6 0" width="0.3" height="0.3" depth="6" color="red"></a-box>
+    <a-box position="3 6 0" width="0.3" height="0.3" depth="6" color="red"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<!-- SPHERE CLIMBING FRAME -->
+<a-entity id="sphereClimber" position="20 5 -30">
+
+  <!-- vertical rings -->
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 0 0" color="green"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 90 0" color="yellow"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 45 0" color="red"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 -45 0" color="green"></a-torus>
+
+  <!-- horizontal rings -->
+  <a-torus radius="6" radius-tubular="0.2" rotation="90 0 0" color="yellow"></a-torus>
+  <a-torus radius="4" radius-tubular="0.2" rotation="90 0 0" color="green"></a-torus>
+
+  <!-- center pole -->
+  <a-cylinder height="12" radius="0.3" color="red"></a-cylinder>
+
+  <!-- bottom base -->
+  <a-cylinder position="0 -6 0" height="1" radius="3" color="yellow"></a-cylinder>
+
+</a-entity>
+
+<!-- SPHERE CLIMBING FRAME -->
+<a-entity id="sphereClimber" position="-18 5 40">
+
+  <!-- vertical rings -->
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 0 0" color="green"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 90 0" color="yellow"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 45 0" color="red"></a-torus>
+  <a-torus radius="6" radius-tubular="0.2" rotation="0 -45 0" color="green"></a-torus>
+
+  <!-- horizontal rings -->
+  <a-torus radius="6" radius-tubular="0.2" rotation="90 0 0" color="yellow"></a-torus>
+  <a-torus radius="4" radius-tubular="0.2" rotation="90 0 0" color="green"></a-torus>
+
+  <!-- center pole -->
+  <a-cylinder height="12" radius="0.3" color="red"></a-cylinder>
+
+  <!-- bottom base -->
+  <a-cylinder position="0 -6 0" height="1" radius="3" color="yellow"></a-cylinder>
+</a-entity>
 
     </a-scene>
   </body>
