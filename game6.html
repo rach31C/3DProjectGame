@@ -105,20 +105,21 @@
         <a-plane id="otherHpBarBg" position="0 3 0" width="2" height="0.2" color="red"></a-plane>
         <a-plane id="otherHpBar" position="0 3 0.02" width="2" height="0.2" color="green"></a-plane>
         <a-sphere color="#EAB794"></a-sphere>
+        <a-sphere radius='0.25' position="-0.45 0 1" color="black"></a-sphere>
+        <a-sphere radius='0.25' position="0.45 0 1" color="black"></a-sphere>
         <a-cylinder src="#shirt" position="0 -2.1 0" rotation="0 180 0" height="3"></a-cylinder>
         <a-entity position="1 -0.5 2.5" rotation="0 180 0">
             <a-gltf-model id="knife2" src="#knifeSG" scale="5 5 5"></a-gltf-model>
         </a-entity>
     </a-entity>
 
-    <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 1000">
-       <a-plane id="myHpBarBg" position="-0.3 0.4 -0.96" width="0.6" height="0.08" color="red"></a-plane>
+    <a-camera  id="player" position="0 3 135"  wasd-controls="fly:false; acceleration: 100">
         <a-plane id="myHpBar" position="-0.3 0.4 -0.97" width="0.6" height="0.08" color="green"></a-plane>
         <a-entity position="1.5 -0.5 -2.5" rotation="0 0 0">
             <a-gltf-model id="knife" src="#knifeSG" scale="5 5 5"></a-gltf-model>
         </a-entity>
         <a-text id="valueDisplay" position="-0.65 -0.75 -0.5"></a-text>
-    </a-camera>
+    </a-camera>`
 
 </a-scene>
 </body>

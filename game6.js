@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded",function() {
     let knife2 = document.getElementById("knife2");
 
     let myHpBar = document.getElementById("myHpBar");
+    let myHpBarBg = document.getElementById("myHpBarBg");
     let otherHpBar = document.getElementById("otherHpBar");
 
     valueDisplay = document.getElementById("valueDisplay");
@@ -37,9 +38,29 @@ window.addEventListener("DOMContentLoaded",function() {
         );
     }
 
+    setInterval(()=>{
+        if(player.object3D.position.x >= 47){
+            player.object3D.position.x = 47;
+        }
+
+        if(player.object3D.position.x <= -47){
+            player.object3D.position.x = -47;
+        }
+
+        if(player.object3D.position.z >= 146){
+            player.object3D.position.z = 146;
+        }
+
+        if(player.object3D.position.z <= -147){
+            player.object3D.position.z = -147;
+        }
+
+    }, 10);
+
     function updateHpBars(){
         // YOUR HP
         let myRatio = myHp / 100;
+        let myRatioStatic = myHp / 100;
 
         myHpBar.setAttribute("width", 0.6 * myRatio);
 
@@ -114,6 +135,10 @@ window.addEventListener("DOMContentLoaded",function() {
 
                 // fall over once
                 otherGuy.setAttribute('rotation', {x:-90,y:0,z:0});
+                otherGuy.setAttribute('position', {x:0,y:-0.75,z:0});
+                setTimeout(() => {
+                    window.location.href = 'lose.html';
+                }, 2000);
 
                 // 🚫 STOP EVERYTHING
                 clearInterval(mainLoop);
@@ -144,4 +169,11 @@ window.addEventListener("DOMContentLoaded",function() {
         }
 
     }, 50);
+
+    if(myHp <= 0){
+        setTimeout(() => {
+            window.location.href = 'ending.html';
+        }, 2000);
+            
+    }
 });
