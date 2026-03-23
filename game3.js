@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', function() {
         countdown();
     
         
-     // random numbers
+     // random numbersssss
         function number(){
             if (gameOver) return;
 
