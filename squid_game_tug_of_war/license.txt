@@ -1,0 +1,11 @@
+Model Information:
+* title:	Squid Game: Tug Of War
+* source:	https://sketchfab.com/3d-models/squid-game-tug-of-war-27eb38ab6e9b47d79f173e388e12fed6
+* author:	chwashere123 (https://sketchfab.com/chwashere123)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Squid Game: Tug Of War" (https://sketchfab.com/3d-models/squid-game-tug-of-war-27eb38ab6e9b47d79f173e388e12fed6) by chwashere123 (https://sketchfab.com/chwashere123) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

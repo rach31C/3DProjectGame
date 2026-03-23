@@ -1,5 +1,13 @@
 let rnd = (l,u) => Math.random() * (u-l) + l;
 
+AFRAME.registerComponent('start-button', {
+  init: function () {
+    this.el.addEventListener('click', function () {
+      window.location.href = `cookie${Math.round(Math.random() * 2 + 1)}.html`;
+    });
+  }
+});
+
 let dalgonaMap;
 window.addEventListener("DOMContentLoaded",function() {
   let player = document.getElementById('player');
@@ -38,13 +46,9 @@ window.addEventListener("DOMContentLoaded",function() {
       return;
     }
 
-    AFRAME.registerComponent('start-button', {
-      init: function () {
-        this.el.addEventListener('click', function (evt) {
-          window.location.href = `cookie${Math.round(Math.random()*2+1)}.html`;
-          console.log()
-        });
-      }
+    // Fallback direct listener for click events if A-Frame component loads late.
+    startBtn.addEventListener('click', () => {
+      window.location.href = `cookie${Math.round(Math.random() * 2 + 1)}.html`;
     });
   };
 

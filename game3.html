@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+    <script src="game3.js"></script>
+  </head>
+
+  <body>
+    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable">
+      
+      <a-assets>
+        <a-asset-item id="tugOfWar" src="squid_game_tug_of_war/scene.gltf"></a-asset-item>
+        <audio id="bgMusic" src="TheRopeIsTie.mp3" preload="auto"></audio>
+        <audio id="loseSound" src="scream.mp3"></audio>
+        <audio id="winSound" src="cheer.mp3"></audio>
+      </a-assets>
+
+      <!-- Add Camera -->
+      <a-camera position="0 1.6 -5"></a-camera>
+
+      <a-box id="rope" position="0 1.6 -12" depth="0.2" height="0.2" width="1" color="red"> </a-box>
+      
+
+      
+      
+       <!-- Light -->
+      <a-light type="directional" intensity="1" position="2 4 2"></a-light>
+      <a-light type="ambient" intensity="0.6"></a-light>
+
+      <!-- Center Line -->
+      
+
+      <!-- Tug of War Model -->
+      
+      <a-entity position="0 0 -25" rotation="0 90 0">
+        <a-gltf-model src="#tugOfWar"></a-gltf-model>
+      </a-entity>
+
+      
+    </a-scene>
+
+    <style>
+.game-info {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 40px;
+
+    padding: 12px 25px;
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+#time-display {
+    color: #00ffcc;
+}
+
+#number-display {
+    color: #ffcc00;
+}
+</style>
+
+<div class="game-info">
+    <div id="time-display">Time: 50</div>
+    <div id="number-display">Press: A</div>
+</div>
+
+  </body>
+</html>
